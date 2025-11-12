@@ -49,15 +49,17 @@ function success(message) {
   const div = document.createElement('div');
 
   div.dataset.qa = 'notification';
+  div.className = 'success';
   div.textContent = message;
   document.body.appendChild(div);
 }
 
-function error(message) {
+function error(errorObject) {
   const div = document.createElement('div');
 
   div.dataset.qa = 'notification';
-  div.textContent = message;
+  div.className = 'error';
+  div.textContent = errorObject.message;
   document.body.appendChild(div);
 }
 
